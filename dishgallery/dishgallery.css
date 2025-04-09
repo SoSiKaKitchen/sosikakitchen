@@ -15,7 +15,7 @@
   height: 180px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid #ff6b6b; /* consistent thinness */
+  border: 2px solid #ff6b6b;
   margin: 0 auto;
   box-shadow: none;
 }
@@ -26,6 +26,7 @@
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
+  border-radius: 50%;
 }
 
 .dish-image-wrapper img:hover {
