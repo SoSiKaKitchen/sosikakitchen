@@ -156,44 +156,6 @@
       color: #666;
     }
 
-    .dish-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .dish-item {
-      text-align: center;
-    }
-
-    .dish-image-wrapper {
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 1px solid var(--theme-color);
-      margin: 0 auto;
-    }
-
-    .dish-image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      transition: transform 0.3s ease;
-    }
-
-    .dish-image-wrapper img:hover {
-      transform: scale(1.08);
-    }
-
-    .dish-name {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
     footer {
       background-color: #222;
       color: #bbb;
@@ -240,31 +202,31 @@
     <div class="dish-gallery">
       <div class="dish-item">
         <div class="dish-image-wrapper">
-          <img src="dishgallery/Biriyani.jpg" alt="">
+          <img src="dishgallery/Biriyani.jpg" alt="Biriyani">
         </div>
         <p class="dish-name"></p>
       </div>
       <div class="dish-item">
         <div class="dish-image-wrapper">
-          <img src="dishgallery/Pizza.jpg" alt="">
+          <img src="dishgallery/Pizza.jpg" alt="Pizza">
         </div>
         <p class="dish-name"></p>
       </div>
       <div class="dish-item">
         <div class="dish-image-wrapper">
-          <img src="dishgallery/Burger.jpg" alt="">
+          <img src="dishgallery/Burger.jpg" alt="Burger">
         </div>
         <p class="dish-name"></p>
       </div>
       <div class="dish-item">
         <div class="dish-image-wrapper">
-          <img src="dishgallery/Noodles.jpg" alt="">
+          <img src="dishgallery/Noodles.jpg" alt="Noodles">
         </div>
         <p class="dish-name"></p>
       </div>
       <div class="dish-item">
         <div class="dish-image-wrapper">
-          <img src="dishgallery/Coffee.jpg" alt="">
+          <img src="dishgallery/Coffee.jpg" alt="Coffee">
         </div>
         <p class="dish-name"></p>
       </div>
@@ -281,7 +243,6 @@
   </footer>
 
   <script>
-    // Dish name from image filename
     document.querySelectorAll('.dish-item').forEach(item => {
       const img = item.querySelector('img');
       const p = item.querySelector('.dish-name');
@@ -295,15 +256,12 @@
       }
     });
 
-    // Theme Switcher (Veg/Non-Veg)
     document.getElementById('themeSwitcher').addEventListener('change', function () {
       const root = document.documentElement;
       if (this.checked) {
-        // Non-Veg theme
         root.style.setProperty('--theme-color', '#ff6b6b');
         root.style.setProperty('--btn-color', '#ff6b6b');
       } else {
-        // Veg theme
         root.style.setProperty('--theme-color', '#4CAF50');
         root.style.setProperty('--btn-color', '#4CAF50');
       }
@@ -312,4 +270,3 @@
 
 </body>
 </html>
-
