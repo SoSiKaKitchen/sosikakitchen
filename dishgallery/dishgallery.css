@@ -39,3 +39,23 @@
   color: #444;
   font-weight: 600;
 }
+
+.order-links {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .order-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .order-links .btn {
+    width: 80%;
+    text-align: center;
+  }
+}
