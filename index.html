@@ -167,31 +167,30 @@
 </head>
 <body>
 
-<header>
-  <h1>SoSiKa Kitchen</h1>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%;">
-    <button class="hamburger" onclick="toggleMenu()">☰</button>
-    <nav id="navLinks">
-      <a href="#">Home</a>
-      <a href="#">Menu</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-    <div class="theme-toggle">
-      <span style="color: white;">Veg</span>
-      <label class="switch">
-        <input type="checkbox" id="themeSwitcher">
-        <span class="slider"></span>
-      </label>
-      <label for="themeSwitcher" style="color: white;">Non-Veg</label>
+  <header>
+    <h1>SoSiKa Kitchen</h1>
+    <div style="display: flex; flex-wrap: wrap; align-items: center;">
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="theme-toggle">
+        <span style="color: white;">Veg</span>
+        <label class="switch">
+          <input type="checkbox" id="themeSwitcher">
+          <span class="slider"></span>
+        </label>
+        <label for="themeSwitcher" style="color: white;">Non-Veg</label>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <section class="hero">
     <h2>Welcome to SoSiKa Kitchen</h2>
     <p>Serving happiness from our kitchen straight to your door.</p>
-    <div class="order-links">
+    <div class="order-links" style=>
       <a href="https://www.swiggy.com/" target="_blank" class="btn">Order on Swiggy</a>
       <a href="https://www.zomato.com/" target="_blank" class="btn">Order on Zomato</a>
     </div>
@@ -248,11 +247,4 @@
   </script>
 
 </body>
-
-function toggleMenu() {
-  const nav = document.getElementById("navLinks");
-  nav.classList.toggle("show");
-}
-
 </html>
-
