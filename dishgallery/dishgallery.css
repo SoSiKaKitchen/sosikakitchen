@@ -15,7 +15,7 @@
   height: 180px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid #ff6b6b;
+  border: 2px solid var(--theme-color);
   margin: 0 auto;
   box-shadow: none;
 }
