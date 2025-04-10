@@ -54,28 +54,28 @@
     align-items: center;
     text-align: center;
   }
-
+  
   header > div {
+    /* The container wrapping nav and theme toggle */
     flex-direction: column;
     align-items: center;
     width: 100%;
+    gap: 10px;
     margin-top: 10px;
   }
-
+  
   nav {
-    display: flex;
+    /* Center the nav links and stack them vertically */
     flex-direction: column;
-    align-items: center;
     gap: 10px;
     width: 100%;
-    margin-top: 10px;
   }
-
+  
   nav a {
-    margin: 0;
+    margin-left: 0;  /* Remove left margin to center links */
   }
-
+  
   .theme-toggle {
-    margin-top: 10px;
+    margin-left: 0;
   }
 }
