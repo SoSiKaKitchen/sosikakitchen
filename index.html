@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="dishgallery/dishgallery.css" />
   <style>
     :root {
-      --theme-color: #ff6b6b;
-      --btn-color: #ff6b6b;
+      --theme-color: #4CAF50; /* Veg by default */
+      --btn-color: #4CAF50;
     }
 
     * {
@@ -27,22 +27,11 @@
     header {
       background-color: var(--theme-color);
       color: white;
-      padding: 20px 40px;
+      padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-    }
-
-    header > div {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
     }
 
     nav a {
@@ -56,13 +45,7 @@
     .theme-toggle {
       display: flex;
       align-items: center;
-    }
-
-    .theme-toggle label {
-      margin-left: 10px;
-      cursor: pointer;
-      font-size: 14px;
-      color: white;
+      margin-left: 20px;
     }
 
     .switch {
@@ -104,7 +87,7 @@
     }
 
     input:checked + .slider {
-      background-color: #4CAF50;
+      background-color: #ff6b6b;
     }
 
     input:checked + .slider:before {
@@ -114,18 +97,17 @@
     .hero {
       background: url('https://source.unsplash.com/1200x600/?food,kitchen') center/cover no-repeat;
       color: white;
-      padding: 100px 40px;
+      padding: 80px 20px;
       text-align: center;
     }
 
     .hero h2 {
-      font-size: 48px;
-      margin-bottom: 10px;
+      font-size: 36px;
     }
 
     .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
+      font-size: 18px;
+      margin: 10px 0 20px;
     }
 
     .btn {
@@ -140,27 +122,46 @@
     }
 
     .section {
-      padding: 60px 40px;
+      padding: 40px 20px;
       text-align: center;
     }
 
     .section h3 {
-      font-size: 32px;
-      margin-bottom: 20px;
+      font-size: 28px;
+      margin-bottom: 15px;
     }
 
     .section p {
       max-width: 600px;
       margin: 0 auto;
-      font-size: 18px;
+      font-size: 17px;
       color: #666;
     }
 
     footer {
       background-color: #222;
       color: #bbb;
-      padding: 20px 40px;
+      padding: 20px;
       text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
@@ -168,7 +169,7 @@
 
   <header>
     <h1>SoSiKa Kitchen</h1>
-    <div>
+    <div style="display: flex; flex-wrap: wrap; align-items: center;">
       <nav>
         <a href="#">Home</a>
         <a href="#">Menu</a>
@@ -181,7 +182,7 @@
           <input type="checkbox" id="themeSwitcher">
           <span class="slider"></span>
         </label>
-        <label for="themeSwitcher">Non-Veg</label>
+        <label for="themeSwitcher" style="color: white;">Non-Veg</label>
       </div>
     </div>
   </header>
@@ -198,38 +199,12 @@
   <section class="section">
     <h3>Featured Dishes</h3>
     <p>From classic comfort food to healthy bites, explore what’s hot on our menu today!</p>
-
     <div class="dish-gallery">
-      <div class="dish-item">
-        <div class="dish-image-wrapper">
-          <img src="dishgallery/Biriyani.jpg" alt="Biriyani">
-        </div>
-        <p class="dish-name"></p>
-      </div>
-      <div class="dish-item">
-        <div class="dish-image-wrapper">
-          <img src="dishgallery/Pizza.jpg" alt="Pizza">
-        </div>
-        <p class="dish-name"></p>
-      </div>
-      <div class="dish-item">
-        <div class="dish-image-wrapper">
-          <img src="dishgallery/Burger.jpg" alt="Burger">
-        </div>
-        <p class="dish-name"></p>
-      </div>
-      <div class="dish-item">
-        <div class="dish-image-wrapper">
-          <img src="dishgallery/Noodles.jpg" alt="Noodles">
-        </div>
-        <p class="dish-name"></p>
-      </div>
-      <div class="dish-item">
-        <div class="dish-image-wrapper">
-          <img src="dishgallery/Coffee.jpg" alt="Coffee">
-        </div>
-        <p class="dish-name"></p>
-      </div>
+      <div class="dish-item"><div class="dish-image-wrapper"><img src="dishgallery/Biriyani.jpg" alt="Biriyani"></div><p class="dish-name"></p></div>
+      <div class="dish-item"><div class="dish-image-wrapper"><img src="dishgallery/Pizza.jpg" alt="Pizza"></div><p class="dish-name"></p></div>
+      <div class="dish-item"><div class="dish-image-wrapper"><img src="dishgallery/Burger.jpg" alt="Burger"></div><p class="dish-name"></p></div>
+      <div class="dish-item"><div class="dish-image-wrapper"><img src="dishgallery/Noodles.jpg" alt="Noodles"></div><p class="dish-name"></p></div>
+      <div class="dish-item"><div class="dish-image-wrapper"><img src="dishgallery/Coffee.jpg" alt="Coffee"></div><p class="dish-name"></p></div>
     </div>
   </section>
 
@@ -243,6 +218,7 @@
   </footer>
 
   <script>
+    // Generate dish name from image filename
     document.querySelectorAll('.dish-item').forEach(item => {
       const img = item.querySelector('img');
       const p = item.querySelector('.dish-name');
@@ -256,7 +232,9 @@
       }
     });
 
-    document.getElementById('themeSwitcher').addEventListener('change', function () {
+    // Theme toggle handler
+    const themeSwitcher = document.getElementById('themeSwitcher');
+    themeSwitcher.addEventListener('change', function () {
       const root = document.documentElement;
       if (this.checked) {
         root.style.setProperty('--theme-color', '#ff6b6b');
