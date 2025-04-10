@@ -167,25 +167,26 @@
 </head>
 <body>
 
-  <header>
-    <h1>SoSiKa Kitchen</h1>
-    <div style="display: flex; flex-wrap: wrap; align-items: center;">
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">Menu</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </nav>
-      <div class="theme-toggle">
-        <span style="color: white;">Veg</span>
-        <label class="switch">
-          <input type="checkbox" id="themeSwitcher">
-          <span class="slider"></span>
-        </label>
-        <label for="themeSwitcher" style="color: white;">Non-Veg</label>
-      </div>
+<header>
+  <h1>SoSiKa Kitchen</h1>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%;">
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <nav id="navLinks">
+      <a href="#">Home</a>
+      <a href="#">Menu</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="theme-toggle">
+      <span style="color: white;">Veg</span>
+      <label class="switch">
+        <input type="checkbox" id="themeSwitcher">
+        <span class="slider"></span>
+      </label>
+      <label for="themeSwitcher" style="color: white;">Non-Veg</label>
     </div>
-  </header>
+  </div>
+</header>
 
   <section class="hero">
     <h2>Welcome to SoSiKa Kitchen</h2>
