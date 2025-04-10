@@ -5,171 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SoSiKa Kitchen</title>
   <link rel="stylesheet" href="dishgallery/dishgallery.css" />
-  <style>
-    :root {
-      --theme-color: #4CAF50; /* Veg by default */
-      --btn-color: #4CAF50;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    body {
-      line-height: 1.6;
-      color: #333;
-      background-color: #fff;
-    }
-
-    header {
-      background-color: var(--theme-color);
-      color: white;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .theme-toggle {
-      display: flex;
-      align-items: center;
-      margin-left: 20px;
-    }
-
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 50px;
-      height: 26px;
-      margin: 0 10px;
-    }
-
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      transition: .4s;
-      border-radius: 26px;
-    }
-
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 18px;
-      width: 18px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      transition: .4s;
-      border-radius: 50%;
-    }
-
-    input:checked + .slider {
-      background-color: #ff6b6b;
-    }
-
-    input:checked + .slider:before {
-      transform: translateX(24px);
-    }
-
-    .hero {
-      background: url('https://source.unsplash.com/1200x600/?food,kitchen') center/cover no-repeat;
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 36px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      margin: 10px 0 20px;
-    }
-
-    .btn {
-      background-color: var(--btn-color);
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .section h3 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .section p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 17px;
-      color: #666;
-    }
-
-    footer {
-      background-color: #222;
-      color: #bbb;
-      padding: 20px;
-      text-align: center;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        margin-top: 10px;
-      }
-
-      .hero h2 {
-        font-size: 28px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header>
     <h1>SoSiKa Kitchen</h1>
-    <div style="display: flex; flex-wrap: wrap; align-items: center;">
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    <div class="header-right" id="headerRight">
       <nav>
         <a href="#">Home</a>
         <a href="#">Menu</a>
@@ -218,7 +61,7 @@
   </footer>
 
   <script>
-    // Generate dish name from image filename
+    // Generate dish names from filenames
     document.querySelectorAll('.dish-item').forEach(item => {
       const img = item.querySelector('img');
       const p = item.querySelector('.dish-name');
@@ -232,7 +75,7 @@
       }
     });
 
-    // Theme toggle handler
+    // Theme toggle
     const themeSwitcher = document.getElementById('themeSwitcher');
     themeSwitcher.addEventListener('change', function () {
       const root = document.documentElement;
@@ -243,6 +86,13 @@
         root.style.setProperty('--theme-color', '#4CAF50');
         root.style.setProperty('--btn-color', '#4CAF50');
       }
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const headerRight = document.getElementById('headerRight');
+    menuToggle.addEventListener('click', () => {
+      headerRight.classList.toggle('show');
     });
   </script>
 
